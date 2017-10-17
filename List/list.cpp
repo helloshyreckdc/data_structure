@@ -149,19 +149,10 @@ void unionL(sqlist *La, sqlist Lb)
 
 int main()
 {
-
-
-
 		sqlist L;
-
 		sqlist Lb;
-
-
-
 		elemType e;
-
 		status i;
-
 		int j,k;
 
 		i=initList(&L);
