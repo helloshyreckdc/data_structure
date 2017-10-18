@@ -16,7 +16,7 @@ typedef int elemType; //元素类型，此处为int
 
 status visit(elemType c)
 {
-		printf("%d", c);
+		printf("%d ", c);
 		return OK;
 }
 
