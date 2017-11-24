@@ -132,6 +132,27 @@ status listInsert(linkList L, int i, elemType e)
 		return OK;
 }
 
+/* 删除表中大于min,小于max的数据 */
+status deleteElement(linkList L, int min, int max)
+{
+	linkList p;
+	p = L;
+	while(p->next)
+	{
+		if(p->next->data > min && p->next->data < max)
+		{
+			linkList q = p->next;
+			p->next = q->next;
+			free(q);
+		}
+		else
+		{
+			p = p->next;
+		}
+	}
+	return 0;
+}
+
 /* 删除元素 */
 status listDelete(linkList L, int i, elemType *e)
 {
@@ -279,6 +300,16 @@ int main()
     createListTail(&L,20);
     printf("整体创建L的元素(尾插法)：");
     listTraverse(L); 
+
+// test an algorithm
+    linkList Ltest;
+    i=initList(&Ltest);
+    for(j=10;j>=1;j--)
+            listInsert(Ltest,1,j);
+    printf("在L的表尾依次插入1～10后：Ltest.data=");
+    listTraverse(Ltest); 
+	deleteElement(Ltest, -5, -3);
+	listTraverse(Ltest);
 
 
     return 0;
