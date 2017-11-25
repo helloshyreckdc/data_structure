@@ -139,7 +139,7 @@ void unionL(sqlist *La, sqlist Lb)
 		elemType e;
 		La_len = listLength(*La);
 		Lb_len = listLength(Lb);
-		for(int i=1; i<Lb_len; i++)
+		for(int i=1; i<=Lb_len; i++)
 		{
 				getElem(Lb, i, &e);
 				if(!locateElem(*La, e))
